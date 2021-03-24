@@ -48,7 +48,10 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true
         }
-    }]
+    }],
+    avater: {
+        type: Buffer
+    }
 }, {
     timestamps: true
 })
@@ -65,6 +68,7 @@ userSchema.methods.toJSON = function () {
 
     delete userObject.password
     delete userObject.tokens
+    delete userObject.avater
 
     return userObject
 }
