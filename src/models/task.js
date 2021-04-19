@@ -1,3 +1,4 @@
+const { Long } = require('bson')
 const mongoose = require('mongoose')
 
 const taskSchema = mongoose.Schema({
@@ -9,6 +10,11 @@ const taskSchema = mongoose.Schema({
     completed: {
         type: Boolean,
         default: false
+    },
+    taskTime: {
+        type: Long,
+        required: true,
+        trim: true
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
