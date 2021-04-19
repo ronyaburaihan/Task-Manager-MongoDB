@@ -12,7 +12,7 @@ const taskSchema = mongoose.Schema({
         default: false
     },
     taskTime: {
-        type: Long,
+        type: String,
         required: true,
         trim: true
     },
